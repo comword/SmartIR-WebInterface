@@ -36,10 +36,7 @@
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li class="active">
-            <a href="#">仪表盘</a>
-          </li>
-          <li class="active">
-            <a href="#"></a>
+            <a href="#">首页</a>
           </li>
         </ul>
       </div>
@@ -54,46 +51,15 @@
       </div><!--/.col-xs-12.col-sm-9-->
       <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar">
         <ul class="nav nav-sidebar">
-          <li class="active" id="nav-#1"><a herf="javascript:void(0);" onclick="">1</a></li>
+          <li class="active" id="nav-#mainpage"><a herf="javascript:void(0);" onclick="getPage('dashboard.html');">仪表盘</a></li>
         </ul>
-        <!--<ul class="nav nav-sidebar">
-        <li><a href="">Nav item</a></li>
-      </ul>-->
       <ul class="nav nav-sidebar">
         <li id="nav-#2"><a herf="javascript:void(0);" onclick="">2</a></li>
         <li id="nav-#3"><a herf="javascript:void(0);" onclick="">3</a></li>
       </ul>
       </div>
     </div>
-      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <h1 class="page-header">Dashboard</h1>
-
-        <div class="row placeholders">
-          <div class="col-xs-6 col-sm-3 placeholder">
-            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4>Label</h4>
-            <span class="text-muted">Something else</span>
-          </div>
-          <div class="col-xs-6 col-sm-3 placeholder">
-            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4>Label</h4>
-            <span class="text-muted">Something else</span>
-          </div>
-          <div class="col-xs-6 col-sm-3 placeholder">
-            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4>Label</h4>
-            <span class="text-muted">Something else</span>
-          </div>
-          <div class="col-xs-6 col-sm-3 placeholder">
-            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4>Label</h4>
-            <span class="text-muted">Something else</span>
-          </div>
-        </div>
-
-        <h2 class="sub-header">Section title</h2>
-        <div class="table-responsive">
-        </div>
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="Mycanvas">
       </div>
   </div>
 
@@ -105,5 +71,8 @@
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="js/ie10-viewport-bug-workaround.js"></script>
   <script src="js/dashboard.js"></script>
+  <script type="text/javascript">
+    getPage('dashboard.html');
+  </script>
 </body>
 </html>

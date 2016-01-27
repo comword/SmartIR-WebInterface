@@ -5,7 +5,7 @@ $(document).ready(function () {
 });
 function getPage(tag) {
   $.ajax({
-    url: "templetes/"+tag,
+    url: "templates/"+tag,
     type: 'GET',
     timeout: 30000,
     error: function(){

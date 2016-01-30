@@ -16,4 +16,18 @@ function getPage(tag) {
       $('[id="Mycanvas"]').append(content);
     }
   });
+  var nav=document.getElementById("nav-#dashboard.html");
+  nav.className = '';
+  nav=document.getElementById("nav-#IRControl.html");
+  nav.className = '';
+  nav=document.getElementById("nav-#Usermanager.html");
+  nav.className = '';
+  obj='nav-#'+tag;
+  nav=document.getElementById(obj);
+  nav.className = 'active';
+  nav=document.getElementById("left-nav-bar");
+  if (nav.className = "row row-offcanvas row-offcanvas-right active")
+  {
+    $('.row-offcanvas').toggleClass('active');
+  }
 }

@@ -35,11 +35,13 @@
         <a href="#" class="navbar-brand">红外线遥控系统</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav navbar-left">
           <li class="active">
             <a href="#">首页</a>
           </li>
         </ul>
+        <div class="nav navbar-nav navbar-right dropdown" id="logineduser">
+        </div>
       </div>
     </div>
   </nav>
@@ -56,7 +58,7 @@
         </ul>
       <ul class="nav nav-sidebar">
         <li id="nav-#IRControl.html"><a herf="javascript:void(0);" onclick="getPage('IRControl.html');">红外线</a></li>
-        <li id="nav-#Usermanager.html"><a herf="javascript:void(0);" onclick="getPage('Usermanager.html');">用户管理</a></li>
+        <li id="nav-#Sysmanager.html"><a herf="javascript:void(0);" onclick="getPage('Sysmanager.html');">系统管理</a></li>
       </ul>
       </div>
     </div>
@@ -73,6 +75,7 @@
   <script src="js/ie10-viewport-bug-workaround.js"></script>
   <script src="js/dashboard.js"></script>
   <script type="text/javascript">
+    check_logined();
     getPage('dashboard.html');
   </script>
 </body>

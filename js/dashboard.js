@@ -8,7 +8,9 @@ function getPage(tag) {
     url: "templates/"+tag,
     type: 'GET',
     timeout: 30000,
-    error: function(){
+    error: function(xhr, ajaxOptions, thrownError){
+      if(xhr.responseText = "Unauthorized")
+      window.location.href = 'login.html';
       return true;
     },
     success: function(content){
@@ -20,7 +22,7 @@ function getPage(tag) {
   nav.className = '';
   nav=document.getElementById("nav-#IRControl.html");
   nav.className = '';
-  nav=document.getElementById("nav-#Usermanager.html");
+  nav=document.getElementById("nav-#Sysmanager.html");
   nav.className = '';
   obj='nav-#'+tag;
   nav=document.getElementById(obj);
@@ -30,4 +32,34 @@ function getPage(tag) {
   {
     $('.row-offcanvas').toggleClass('active');
   }
+}
+function JSON_stringify(s, emit_unicode)
+{
+  var json = JSON.stringify(s);
+  return emit_unicode ? json : json.replace(/[\u007f-\uffff]/g,
+    function(c) {
+      return '\\u'+('0000'+c.charCodeAt(0).toString(16)).slice(-4);
+    }
+  );
+}
+function check_logined()
+{
+  $.ajax({
+    url: "/get_user_info.cgi",
+    type: 'GET',
+    timeout: 30000,
+    error: function(xhr, ajaxOptions, thrownError){
+      if(xhr.responseText = "Unauthorized")
+      window.location.href = 'login.html';
+      return true;
+    },
+    success: function(content){
+      $('[id="logineduser"]').empty();
+      var data = JSON.parse(JSON_stringify(content,true));
+      menu = '<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'
+      menu = menu + data["User"]
+      menu = menu + '<span class="caret"></span></a><ul class="dropdown-menu"><li><a href="logout.cgi">退出登录</a></li></ul></li>'
+      $('[id="logineduser"]').append(menu);
+    }
+  });
 }

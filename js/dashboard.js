@@ -3,6 +3,23 @@ $(document).ready(function () {
     $('.row-offcanvas').toggleClass('active')
   });
 });
+$(function(){
+function renew_jwt(){
+  $.ajax({
+    url: "renew_jwt.cgi",
+    type: 'GET',
+    timeout: 30000,
+    error: function(xhr, ajaxOptions, thrownError){
+      if(xhr.responseText = "Unauthorized")
+      window.location.href = 'login.html';
+      return true;
+    },
+    success: function(content){
+    }
+  });
+}
+setInterval(renew_jwt,1200000);
+});
 function getPage(tag) {
   $.ajax({
     url: "templates/"+tag,

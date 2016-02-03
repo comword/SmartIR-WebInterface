@@ -73,6 +73,8 @@ function check_logined()
     success: function(content){
       $('[id="logineduser"]').empty();
       var data = JSON.parse(JSON_stringify(content,true));
+      if (data = "JWTError")
+        location.reload();
       menu = '<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'
       menu = menu + data["User"]
       menu = menu + '<span class="caret"></span></a><ul class="dropdown-menu"><li><a href="logout.cgi">退出登录</a></li></ul></li>'

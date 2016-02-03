@@ -1,15 +1,21 @@
 <h1 class="page-header">系统管理</h1>
-<div>
-  <ul class="nav nav-tabs" role="tablist">
+<div class="row placeholders">
+  <ul class="nav nav-tabs" role="tablist" id="systemTabs">
     <li role="presentation" class="active"><a href="#Users" aria-controls="Users" role="tab" data-toggle="tab">用户</a></li>
     <li role="presentation"><a href="#privilege" aria-controls="privilege" role="tab" data-toggle="tab">全校</a></li>
     <li role="presentation"><a href="#rooms" aria-controls="rooms" role="tab" data-toggle="tab">房间</a></li>
     <li role="presentation"><a href="#devices" aria-controls="devices" role="tab" data-toggle="tab">设备</a></li>
   </ul>
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="Users">...</div>
-    <div role="tabpanel" class="tab-pane" id="privilege">...</div>
-    <div role="tabpanel" class="tab-pane" id="rooms">...</div>
-    <div role="tabpanel" class="tab-pane" id="devices">...</div>
+    <div role="tabpanel" class="tab-pane fade in active" id="Users">...</div>
+    <div role="tabpanel" class="tab-pane fade" id="privilege">...</div>
+    <div role="tabpanel" class="tab-pane fade" id="rooms">...</div>
+    <div role="tabpanel" class="tab-pane fade" id="devices">...</div>
   </div>
 </div>
+<script type="text/javascript">
+$('#myTabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+</script>

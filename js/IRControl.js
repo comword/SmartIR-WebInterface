@@ -9,3 +9,14 @@ $("#studybutton").click(function () {
     }
   });
 });
+function get_IR_recode()
+{
+  $.ajax({
+    url: "get_IR_recode.cgi",
+    type: 'POST',
+    dataType: "html",
+    success: function (strValue) {
+      var data = JSON.parse(JSON_stringify(content,true));
+    }
+  });
+}

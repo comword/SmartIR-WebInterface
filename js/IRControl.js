@@ -20,22 +20,17 @@ function get_IR_recode()
     }
   });
 }
-function get_IR_detail(IRID)
+function show_IR_detail(IRID)
 {
-  $.ajax({
-    url: "get_IR_detail.cgi",
-    type: 'GET',
-    dataType: "html",
-    data: {m_IRID: IRID},
-    success: function (strValue) {
-      var data = JSON.parse(JSON_stringify(strValue,true));
-      var table = $('#IRs-_'+data["IRID"]);
-      table.empty();
-      var content = '<div class="panel-body">';
-      
-
-    }
-  });
+    var table = $('#IRs-_'+IRID);
+    table.empty();
+    var content = '<div class="panel-body"><button type="button" class="btn btn-default btn-lg" onclick="IR_Send(';
+    content = content + IRID;
+    content = content + ')"><span class="glyphicon glyphicon-play" aria-hidden="true"></span>发射</button><button type="button" class="btn btn-default btn-lg" onclick="IR_Modify(';
+    content = content + IRID;
+    content = content + ')"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改</button><button type="button" class="btn btn-default btn-lg" onclick="IR_Remove(';
+    content = content + IRID;
+    content = content + ')"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>删除</button></div>';
 }
 function generate_IR_table(data)
 {
@@ -58,4 +53,16 @@ function generate_IR_table(data)
       content = content + '"></div></div>';
       table.append(content);
   }
+}
+function IR_Send(IRID)
+{
+
+}
+function IR_Modify(IRID)
+{
+
+}
+function IR_Remove(IRID)
+{
+
 }

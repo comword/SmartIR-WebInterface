@@ -37,7 +37,7 @@
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-left">
           <li class="active">
-            <a href="#">首页</a>
+            <a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a>
           </li>
         </ul>
         <div class="nav navbar-nav navbar-right dropdown" id="logineduser">
@@ -54,29 +54,31 @@
       </div><!--/.col-xs-12.col-sm-9-->
       <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar">
         <ul class="nav nav-sidebar">
-          <li class="active" id="nav-#dashboard.html"><a herf="javascript:void(0);" onclick="getPage('dashboard.html');">仪表盘</a></li>
-        </ul>
-      <ul class="nav nav-sidebar">
-        <li id="nav-#IRControl.html"><a herf="javascript:void(0);" onclick="getPage('IRControl.html');">红外线</a></li>
-        <li id="nav-#Sysmanager.html"><a herf="javascript:void(0);" onclick="getPage('Sysmanager.html');">系统管理</a></li>
-      </ul>
+          <li class="active" id="nav-#dashboard.html"><a herf="javascript:void(0);" onclick="getPage('dashboard.html');">
+            <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>仪表盘</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li id="nav-#IRControl.html"><a herf="javascript:void(0);" onclick="getPage('IRControl.html');">
+              <span class="glyphicon glyphicon-transfer" aria-hidden="true"></span>红外线</a></li>
+            <li id="nav-#Sysmanager.html"><a herf="javascript:void(0);" onclick="getPage('Sysmanager.html');">
+              <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>系统管理</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="Mycanvas">
+        </div>
       </div>
-    </div>
-      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id="Mycanvas">
-      </div>
-  </div>
-
-  <!-- Bootstrap core JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="js/jquery-2.1.4.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="js/ie10-viewport-bug-workaround.js"></script>
-  <script src="js/dashboard.js"></script>
-  <script type="text/javascript">
-    check_logined();
-    getPage('dashboard.html');
-  </script>
-</body>
-</html>
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="js/jquery-2.1.4.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+      <script src="js/ie10-viewport-bug-workaround.js"></script>
+      <script src="js/dashboard.js"></script>
+      <script type="text/javascript">
+      check_logined();
+      getPage('dashboard.html');
+      </script>
+    </body>
+    </html>

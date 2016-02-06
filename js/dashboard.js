@@ -21,20 +21,6 @@ function renew_jwt(){
 setInterval(renew_jwt,1200000);
 });
 function getPage(tag) {
-  $.ajax({
-    url: "templates/"+tag,
-    type: 'GET',
-    timeout: 30000,
-    error: function(xhr, ajaxOptions, thrownError){
-      if(xhr.responseText = "Unauthorized")
-      window.location.href = 'login.html';
-      return true;
-    },
-    success: function(content){
-      $('[id="Mycanvas"]').empty();
-      $('[id="Mycanvas"]').append(content);
-    }
-  });
   var nav=document.getElementById("nav-#dashboard.html");
   nav.className = '';
   nav=document.getElementById("nav-#IRControl.html");
@@ -49,6 +35,20 @@ function getPage(tag) {
   {
     $('.row-offcanvas').toggleClass('active');
   }
+  $.ajax({
+    url: "templates/"+tag,
+    type: 'GET',
+    timeout: 30000,
+    error: function(xhr, ajaxOptions, thrownError){
+      if(xhr.responseText = "Unauthorized")
+      window.location.href = 'login.html';
+      return true;
+    },
+    success: function(content){
+      $('[id="Mycanvas"]').empty();
+      $('[id="Mycanvas"]').append(content);
+    }
+  });
 }
 function JSON_stringify(s, emit_unicode)
 {
@@ -73,8 +73,8 @@ function check_logined()
     success: function(content){
       $('[id="logineduser"]').empty();
       var data = JSON.parse(JSON_stringify(content,true));
-      if (data = "JWTError")
-        location.reload();
+//      if (data = "JWTError")
+//        location.reload();
       menu = '<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'
       menu = menu + data["User"]
       menu = menu + '<span class="caret"></span></a><ul class="dropdown-menu"><li><a href="logout.cgi">退出登录</a></li></ul></li>'

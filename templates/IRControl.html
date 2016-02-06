@@ -1,5 +1,5 @@
 <h1 class="page-header">红外线</h1>
-<h2 class="sub-header">红外线学习</h2>
+<h2 class="sub-header"><span class="glyphicon glyphicon-save" aria-hidden="true"></span>红外线学习</h2>
 <div class="row placeholders">
   <div class="col-xs-12 col-md-2 placeholder" style="text-align: center;">
     <button type="button" class="btn btn-primary btn-lg active" id="studybutton" >开始学习</button>
@@ -13,23 +13,32 @@
     </figure>
   </div>
 </div>
-<h2 class="sub-header">发射红外线</h2>
+<h2 class="sub-header"><span class="glyphicon glyphicon-open" aria-hidden="true"></span>发射红外线</h2>
 <!--SelectionButtons grouped by difference room-->
 <!--After select go AJAX and get list of IR signal-->
 <!--Display IR signal in graph and some management options-->
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"><!--
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="IRs-Heading_0">
       <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#IRs-_0" aria-expanded="true" aria-controls="IRs-_0">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#IRs-_0" aria-expanded="false" aria-controls="IRs-_0">
           Example Nickname
         </a>
       </h4>
     </div>
-    <div id="IRs-_0" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="IRs-Heading_0">
+    <div id="IRs-_0" class="panel-collapse collapse" role="tabpanel" aria-labelledby="IRs-Heading_0" aria-expanded="false">
       <div class="panel-body">
+        <button type="button" class="btn btn-default btn-lg" onclick="IR_Send(IRID)">
+          <span class="glyphicon glyphicon-play" aria-hidden="true"></span>发射
+        </button>
+        <button type="button" class="btn btn-default btn-lg" onclick="IR_Modify(IRID)">
+          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改
+        </button>
+        <button type="button" class="btn btn-default btn-lg" onclick="IR_Remove(IRID)">
+          <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>删除
+        </button>
       </div>
     </div>
-  </div>
+  </div>-->
 </div>
 <script src="js/IRControl.js"></script>

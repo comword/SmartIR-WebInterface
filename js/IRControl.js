@@ -1,14 +1,18 @@
 $("#studybutton").click(function () {
+  strTxtName = $("input[name='IRID_Input']").val();
   $.ajax({
     url: "study_IR.cgi",
     type: 'POST',
     dataType: "html",
-    data: {m_room: strTxtName},
+    data: {IRID: strTxtName},
     success: function (strValue) {
-
+      window.check_learn_status_timer = setInterval(check_learn_status,1000);
     }
   });
 });
+function check_learn_status() {
+  //clearInterval(window.check_learn_status_timer);
+}
 function get_IR_recode()
 {
   $.ajax({

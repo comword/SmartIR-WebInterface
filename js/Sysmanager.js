@@ -12,7 +12,15 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 })
 function deluser(Username)
 {
+  $.ajax({
+    url: "get_user_list.cgi",
+    type: 'POST',
+    dataType: "html",
+    data: {m_username:"None"},
+    success: function (strValue) {
 
+    }
+  });
 }
 function modpriv(Username)
 {

@@ -82,3 +82,19 @@ function check_logined()
     }
   });
 }
+function get_operation_log()
+{
+  $.ajax({
+    url: "/get_operation_log.cgi",
+    type: 'GET',
+    timeout: 30000,
+    error: function(xhr, ajaxOptions, thrownError){
+      if(xhr.responseText = "Unauthorized")
+      window.location.href = 'login.html';
+      return true;
+    },
+    success: function(content){
+      
+    }
+  });
+}
